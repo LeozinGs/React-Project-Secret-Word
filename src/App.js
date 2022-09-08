@@ -42,13 +42,17 @@ function App() {
   const [gameStage, setGameStage] = useState(
     stages[0].name
   )
-
   const [words] = useState(wordsList)
 
   //Escolher palavra e categoria
   const [pickedWord, setPickedWord] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([])
+
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [worngLetters, setWrongLetters] = useState([])
+  const [guesses, setGuesses] = useState(5)
+  const [score, setScore] = useState(0)
 
   const pickWordAndCategory = () => {
     // Escolhendo uma categoria aleatoria
@@ -81,7 +85,7 @@ function App() {
     //Preenchendo states
     setPickedWord(word)
     setPickedCategory(category)
-    setLetters(letters)
+    setLetters(wordLetters)
 
 
     //Setando estágio do jogo
@@ -89,8 +93,8 @@ function App() {
   }
 
   // Processa a letra no input
-  const verifyLetter = () => {
-    setGameStage(stages[2].name)
+  const verifyLetter = (letter) => {
+    console.log(letter)
   }
 
   // Recomeça o jogo
@@ -101,7 +105,18 @@ function App() {
   return (
     <div className="App">
       {gameStage === 'start' && <StartScreen startGame={startGame} />}
-      {gameStage === 'game' && <Game verifyLetter={verifyLetter} />}
+      {gameStage === 'game' && (
+        <Game
+          verifyLetter={verifyLetter}
+          pickedWord={pickedWord}
+          pickedCategory={pickedCategory}
+          letters={letters}
+          guessedLetters={guessedLetters}
+          worngLetters={worngLetters}
+          guesses={guesses}
+          score={score}
+        />
+      )}
       {gameStage === 'end' && <EndGame retry={retry} />}
 
       {/* Zuluzes */}

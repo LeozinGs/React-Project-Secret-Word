@@ -22,10 +22,10 @@ const StartScreen = ({ startGame }) => {
       </div>
 
       {/* Instrução */}
-      <p>Clique no Botão para começar a jogar!</p>
+      <p>Click on the buttom below to start the game</p>
 
       {/* Button */}
-      <button onClick={startGame}>Start Game</button>
+      <button className="startButton" onClick={startGame}>Start Game</button>
 
     </div>
   )

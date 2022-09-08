@@ -14,7 +14,7 @@ body {
 
 
 /* Button */
-button {
+.startButton {
   margin-top: 5em;
   color: rgb(119, 117, 112);
   font-family: helvetica;
@@ -31,12 +31,12 @@ button {
   z-index: 1;
 }
 
-button:hover {
+.startButton:hover {
   background-color: rgb(172, 165, 157);
   color: rgb(75, 74, 73);
 }
 
-button:active {
+.startButton:active {
   -webkit-box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
   box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
   color: rgba(105, 103, 100, 0.575);
@@ -165,7 +165,7 @@ button:active {
   left: 85%;
 }
 
-button:focus {
+.startButton:focus {
   outline: none;
 }
 

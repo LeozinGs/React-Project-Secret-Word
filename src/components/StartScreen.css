@@ -4,6 +4,7 @@
     transform: translate(-50%, -50%);
     font-family: 'Caesar Dressing', cursive;
     font-size: 100px;
+    font-weight: 100;
     letter-spacing: 0.1em;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 3px;

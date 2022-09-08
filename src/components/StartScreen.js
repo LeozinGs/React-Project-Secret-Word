@@ -1,10 +1,13 @@
 import './StartScreen.sass'
 
-const StartScreen = () => {
+const StartScreen = ({ startGame }) => {
   return (
     <div className="start">
+
       {/* <h1>Secret Word</h1> */}
-      <div class="text">
+
+      {/* Texto Principal */}
+      <div className="text">
         <span>S</span>
         <span>E</span>
         <span>C</span>
@@ -17,8 +20,13 @@ const StartScreen = () => {
         <span>R</span>
         <span>D</span>
       </div>
+
+      {/* Instrução */}
       <p>Clique no Botão para começar a jogar!</p>
-      <button>Start Game</button>
+
+      {/* Button */}
+      <button onClick={startGame}>Start Game</button>
+
     </div>
   )
 }

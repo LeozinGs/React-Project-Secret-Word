@@ -4,5 +4,6 @@ export const wordsList = {
     flor: ["Caule", "Pétala", "Folha", "Espinho", "Perfume"],
     marca: ["Starbucks", "Honda", "Pichau", "Corsair", "Razer"],
     valorant: ["Jett", "Omen", "Viper", "Killjoy", "Raze"],
-    programação: ["React", "JavaScript", "Java", "Unreal", "Unity"]
+    programação: ["React", "JavaScript", "Java", "Unreal", "Unity"],
+    discord: ["Rurushu", "Mizu", "Minkas", "Aroldu", "Greiso", "Venes", "Leozinho", "Ordnave"]
 }

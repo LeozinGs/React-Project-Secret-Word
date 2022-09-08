@@ -1,0 +1,59 @@
+//  .start h1 {
+//  position: absolute;
+//  left: 50%;
+//  transform: translate(-50%, -50%);
+//  font-family: helvetica;
+//  font-size: 70px;
+//  font-weight: bold;
+//  letter-spacing: 0.1em;
+//  -webkit-text-fill-color: transparent;
+//  -webkit-text-stroke-width: 3px;
+//  -webkit-text-stroke-color: rgb(240, 206, 206);
+//  text-shadow: 8px 8px #753154,
+//  20px 20px #181717;
+//  }
+
+.start p
+    font-family: helvetica
+    font-weight: bold
+    color: rgb(247, 243, 233)
+
+// Texto animado com fundo quadrado
+.text
+    display: flex
+    justify-content: center
+    margin-top: 10vh
+    transform: translateY(-50%)
+    text-align: center
+    transition: transform .3s ease-in-out
+    font-size: 30px
+    color: #545454
+
+    &:hover
+        transform: rotateX(35deg), translateY(-50%)
+
+        span
+            color: #545454
+
+            &:nth-child(odd)
+                transform: skewY(15deg)
+                // background-color: #f00
+                // box-shadow: 0 60px 20px rgba(0, 0, 0, 0.1)
+
+            &:nth-child(even)
+                transform: skewY(-15deg)
+                background-color: #f9f9f9
+                color: #545454
+                // box-shadow: 0 60px 20px rgba(0, 0, 0, 0.1)
+
+    >span
+        display: block
+        background-color: #fff
+        width: 80px
+        height: 80px
+        line-height: 80px
+        transition: transform .3s ease-in-out, color .3s ease-in-out, background-color .3s ease-in-out
+        box-shadow: 0 40px 50px rgba(0, 0, 0, 0.2)
+
+        &:first-child
+            border-radius: 5px 0 0 5px

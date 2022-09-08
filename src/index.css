@@ -8,7 +8,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, rgb(61, 4, 61), rgb(49, 15, 38));
+  background: linear-gradient(180deg, rgb(236, 193, 144), rgb(100, 70, 41));
   color: #fff;
 }
 
@@ -16,29 +16,30 @@ body {
 /* Button */
 button {
   margin-top: 5em;
-  color: rgb(240, 206, 206);
+  color: rgb(119, 117, 112);
   font-family: helvetica;
   font-size: 20px;
   width: 150px;
   height: 50px;
-  border: 2px solid rgb(21, 2, 43);
-  background-color: rgb(41, 18, 78);
-  border-radius: 50px;
+  border: none;
+  background-color: #f9f9f9;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.4s;
-  -webkit-box-shadow: 10px 11px 22px 0px rgba(0, 0, 0, 0.68);
-  box-shadow: 10px 11px 22px 0px rgba(0, 0, 0, 0.68);
+  -webkit-box-shadow: 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
   z-index: 1;
 }
 
 button:hover {
-  background-color: rgb(21, 2, 43);
+  background-color: rgb(172, 165, 157);
+  color: rgb(75, 74, 73);
 }
 
 button:active {
-  -webkit-box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.68);
-  box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.68);
-  color: rgba(105, 100, 100, 0.685);
+  -webkit-box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 10px 11px 22px 0px rgba(0, 0, 0, 0.3);
+  color: rgba(105, 103, 100, 0.575);
 }
 
 /* Zuluzes */
@@ -48,7 +49,7 @@ button:active {
   width: 0px;
   opacity: .75;
   background-color: white;
-  box-shadow: #ec88e7 0px 0px 20px 2px;
+  box-shadow: #ecddce 0px 0px 20px 2px;
   opacity: 0;
   top: 100vh;
   bottom: 0px;

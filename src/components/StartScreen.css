@@ -2,20 +2,19 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Caesar Dressing', cursive;
-    font-size: 100px;
-    font-weight: 100;
+    font-family: helvetica;
+    font-size: 70px;
+    font-weight: bold;
     letter-spacing: 0.1em;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: white;
-    text-shadow:
-        8px 8px #ff1f8f,
-        20px 20px #000000;
+    -webkit-text-stroke-color: rgb(240, 206, 206);
+    text-shadow: 8px 8px #753154,
+        20px 20px #181717;
 }
 
 .start p {
-    font-family: 'Caesar Dressing', cursive;
+    font-family: helvetica;
     margin-top: 12em;
     margin-bottom: 2em;
     color: rgb(240, 206, 206);

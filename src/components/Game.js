@@ -72,7 +72,7 @@ const Game = ({
                         maxLength={1}
                         required
                         onChange={(e) => setLetter(e.target.value)}
-                        value={letter}
+                        value={letter.toUpperCase()}
                         ref={letterInputRef}
                     />
                     <button className='send'>&gt;</button>
@@ -81,7 +81,7 @@ const Game = ({
             <div className="wrongLettersContainer">
                 <p>Letters already used:</p>
                 {worngLetters.map((letter, i) => (
-                    <span key={i}>{letter}, </span>
+                    <span key={i}> {letter.toUpperCase()},</span>
                 ))}
             </div>
         </div >

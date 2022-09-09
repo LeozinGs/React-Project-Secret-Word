@@ -94,7 +94,28 @@ function App() {
 
   // Processa a letra no input
   const verifyLetter = (letter) => {
-    console.log(letter)
+    const normalizeLetter = letter.toLowerCase()
+
+    //Checando se as letras ja foram utilizadas
+    if (guessedLetters.includes(normalizeLetter) || worngLetters.includes(normalizeLetter)) {
+      return
+    }
+
+    //Pegando a letra da tentativa ou removendo uma chance
+    if (letters.includes(normalizeLetter)) {
+      setGuessedLetters((actualGuessedLetters) => [
+        ...actualGuessedLetters,
+        normalizeLetter
+      ])
+    } else {
+      setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+        normalizeLetter
+      ])
+    }
+
+    console.log(guessedLetters)
+    console.log(worngLetters)
   }
 
   // Recomeça o jogo

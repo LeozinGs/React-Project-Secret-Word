@@ -31,7 +31,7 @@ const Game = ({
     return (
         <div className='screen'>
             <p className='points'>
-                <span>Points: {score}</span>
+                <span>Score: {score}</span>
             </p>
             {/* <h1>Guess the word: </h1> */}
             <div className="title">

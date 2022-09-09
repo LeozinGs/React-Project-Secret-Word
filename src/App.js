@@ -18,6 +18,8 @@ const stages = [
   { id: 3, name: 'end' }
 ]
 
+const guessesQty = 5
+
 function replaceSpecialChars(str) {
   str = str.replace(/[ÀÁÂÃÄÅ]/, "A");
   str = str.replace(/[àáâãäå]/, "a");
@@ -51,10 +53,10 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([])
   const [worngLetters, setWrongLetters] = useState([])
-  const [guesses, setGuesses] = useState(5)
+  const [guesses, setGuesses] = useState(guessesQty)
   const [score, setScore] = useState(0)
 
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
     // Escolhendo uma categoria aleatoria
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
@@ -67,10 +69,16 @@ function App() {
     console.log(word)
 
     return { word, category }
-  }
+  }, [words])
+
+
 
   // Começa o jogo Secret Word
-  const startGame = () => {
+  const startGame = useCallback(() => {
+
+    // Limpando todas as letras
+    clearLetterStates()
+
     //Escolhendo palavra e categoria
     const { word, category } = pickWordAndCategory()
 
@@ -90,7 +98,7 @@ function App() {
 
     //Setando estágio do jogo
     setGameStage(stages[1].name)
-  }
+  }, [pickWordAndCategory])
 
   // Processa a letra no input
   const verifyLetter = (letter) => {
@@ -112,14 +120,56 @@ function App() {
         ...actualWrongLetters,
         normalizeLetter
       ])
+
+      setGuesses((actualGuesses) => actualGuesses - 1)
+    }
+  }
+
+  //Função para resetar states
+  const clearLetterStates = () => {
+
+    setGuessedLetters([])
+    setWrongLetters([])
+
+  }
+
+  useEffect(() => {
+
+    //Checando se as tentativas acabaram
+    if (guesses <= 0) {
+
+      //Resetando todos os states
+      clearLetterStates()
+      setGameStage(stages[2].name)
+
     }
 
-    console.log(guessedLetters)
-    console.log(worngLetters)
-  }
+  }, [guesses])
+
+  // Checando condição de vitória
+  useEffect(() => {
+
+    const uniqueLetters = [...new Set(letters)]
+
+    // Condição de vitória
+    if (guessedLetters.length === uniqueLetters.length && gameStage !== stages[0].name) {
+
+      // Adcionando score
+      setScore((actualScore) => actualScore += 100)
+
+      // Resetando o jogo com uma palavra nova
+      startGame()
+
+    }
+
+
+  }, [guessedLetters, letters, startGame, gameStage])
 
   // Recomeça o jogo
   const retry = () => {
+    setScore(0)
+    setGuesses(guessesQty)
+
     setGameStage(stages[0].name)
   }
 
@@ -138,7 +188,7 @@ function App() {
           score={score}
         />
       )}
-      {gameStage === 'end' && <EndGame retry={retry} />}
+      {gameStage === 'end' && <EndGame retry={retry} score={score} />}
 
       {/* Zuluzes */}
       <div className='light x1'></div>

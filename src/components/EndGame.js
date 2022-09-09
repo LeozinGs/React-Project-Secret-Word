@@ -22,7 +22,7 @@ const EndGame = ({ retry, score }) => {
             <h2>
                 Your final score is: <span>{score}</span>
             </h2>
-            <button onClick={retry}>Recomeçar</button>
+            <button className="tryAgain" onClick={retry}>Try Again</button>
         </div>
     )
 }

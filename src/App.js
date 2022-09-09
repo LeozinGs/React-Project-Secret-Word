@@ -61,17 +61,11 @@ function App() {
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
 
-    console.log(category)
-
     // Escolhendo uma palavra aleatoria
     const word = words[category][Math.floor(Math.random() * words[category].length)]
 
-    console.log(word)
-
     return { word, category }
   }, [words])
-
-
 
   // Começa o jogo Secret Word
   const startGame = useCallback(() => {
@@ -87,14 +81,10 @@ function App() {
     wordLetters = wordLetters.map((l) => l.toLowerCase())
     wordLetters = wordLetters.map((l) => replaceSpecialChars(l))
 
-    console.log(wordLetters)
-    console.log(word, category)
-
     //Preenchendo states
     setPickedWord(word)
     setPickedCategory(category)
     setLetters(wordLetters)
-
 
     //Setando estágio do jogo
     setGameStage(stages[1].name)
@@ -155,13 +145,12 @@ function App() {
     if (guessedLetters.length === uniqueLetters.length && gameStage !== stages[0].name) {
 
       // Adcionando score
-      setScore((actualScore) => actualScore += 100)
+      setScore((actualScore) => actualScore += 111)
 
       // Resetando o jogo com uma palavra nova
       startGame()
 
     }
-
 
   }, [guessedLetters, letters, startGame, gameStage])
 
